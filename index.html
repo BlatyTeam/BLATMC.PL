@@ -194,12 +194,16 @@
         <h1>BLATMC.PL</h1>
     </header>
     <nav>
-        <a href="#about">O Nas</a>
-        <a href="#purchase">Sklep</a>
-        <a href="#contact">Kontakt</a>
-        <a href="#social-media">Social Media</a>
-        <a href="#" onclick="copyToClipboard()">Skopiuj IP</a>
+        <a href="#about" onclick="playMinecraftSound()">O Nas</a>
+        <a href="#purchase" onclick="playMinecraftSound()">Sklep</a>
+        <a href="#contact" onclick="playMinecraftSound()">Kontakt</a>
+        <a href="#social-media" onclick="playMinecraftSound()">Social Media</a>
+        <a href="#" onclick="copyToClipboard()" onclick="playMinecraftSound()">Skopiuj IP</a>
     </nav>
+<audio id="minecraftAudio">
+  <source src="minecraft.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
     <div class="container">
         <section id="about">
             <h2>O Nas</h2>
@@ -225,7 +229,7 @@
             <div class="purchase-option">
 				<img src="BLAT.png" width="100">
                 <p>Tutaj zakupisz swoj wirtualny przedmiot.</p>
-                <a href="https://vishop.pl/shop/6731/server/9954" target="_blank"><button class="buy-button">Przejdź do sklepu</button></a>
+                <a href="https://vishop.pl/shop/6731/server/9954" target="_blank"><button onclick="playMinecraftSound()" class="buy-button" >Przejdź do sklepu</button></a>
             </div>
         </section>
         <section id="contact">
@@ -286,6 +290,11 @@
                 body.style.overflow = 'auto';
             }, 5000);
         });
+		
+function playMinecraftSound() {
+  var audio = document.getElementById("minecraftAudio");
+  audio.play();
+}
     </script>
 </body>
 </html>
